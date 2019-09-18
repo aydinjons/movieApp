@@ -1,35 +1,23 @@
 var Aydin = Aydin || {};
 
 Aydin.myModule = (function (){
-    var test = new UI();
-    console.log(test);
+
     return {
-        'myProp' : test,
         init : () => new UI(),
-        query : () => UI.value,
-        getTest : () => test
     }
     
 })();
 
 
     
-
-
 function UI() {
         
 }
 
-
+const instanceUI = Aydin.myModule.init();
+console.log(instanceUI.addFilmToUI)
 UI.prototype.addFilmToUI = function (newFilm) {
 
-
-    /* <tr>
-    <td><img src="" class="img-fluid img-thumbnail"></td>
-    <td></td>
-    <td></td>
-    <td><a href="#" id = "delete-film" class = "btn btn-danger">Filmi Sil</a></td>
-  </tr> */
     const filmList = document.getElementById("films")
     filmList.innerHTML += `
             <tr>
@@ -40,6 +28,7 @@ UI.prototype.addFilmToUI = function (newFilm) {
         </tr>
     `;
 
+   
 }
 
 UI.prototype.clearInputs = function(element1,element2,element3){
@@ -64,7 +53,7 @@ UI.prototype.displayMessages= function(message,type){
 
 }
 
-UI.value = 2;
+
 
 
 

@@ -40,9 +40,8 @@ function addFilm(e){
     e.preventDefault(); // this method prevent reload the web page.
 }
 
-const apo = Aydin.myModule.init();
-console.log(Aydin.myModule);
-console.log(Aydin.myModule.getTest());
+
+
 
 
 
