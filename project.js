@@ -46,8 +46,10 @@ function addFilm(e){
 
 function removeFilm(e){
 
-    if(e.target.id = "delete-film"){
+    if(e.target.id == "delete-film"){
         instanceUI.removeFilms(e.target)
+    }else{
+        return void 0;
     }
 
 }

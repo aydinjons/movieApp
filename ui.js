@@ -15,7 +15,8 @@ function UI() {
 }
 
 const instanceUI = Aydin.myModule.init();
-console.log(instanceUI.addFilmToUI)
+
+
 UI.prototype.addFilmToUI = function (newFilm) {
 
     const filmList = document.getElementById("films")
