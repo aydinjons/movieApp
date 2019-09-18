@@ -4,6 +4,8 @@ const form = document.getElementById("film-form");
 const  titleElement = document.querySelector("#title");
 const  directorElement = document.querySelector("#director");
 const  urlElement = document.querySelector("#url");
+const filmsBody = document.querySelectorAll(".card-body")[1]
+const deleteButton = document.getElementById("delete-film")
 
 
 
@@ -16,6 +18,7 @@ const  urlElement = document.querySelector("#url");
 eventListener()
 function eventListener(){
     form.addEventListener("submit", addFilm);
+    filmsBody.addEventListener("click", removeFilm)
 }
 
 function addFilm(e){
@@ -25,19 +28,28 @@ function addFilm(e){
     const url = urlElement.value;
 
     if(title ==="" || director ==="" || url=== ""){
-        displayMessages("Tüm alanları doldurun","danger")
+        instanceUI.displayMessages("Tüm alanları doldurun","danger")
     }else{
         //New Movie
         const newFilm = new Movie(title,director,url)
-        addFilmToUI(newFilm) // Adding movie to ui
+        instanceUI.addFilmToUI(newFilm) // Adding movie to ui
+        instanceUI.displayMessages("Film başarıyla eklendi", "success")
     }
 
     
 
-    clearInputs(titleElement,directorElement,urlElement); // Clearing text box after click the submit button
+    instanceUI.clearInputs(titleElement,directorElement,urlElement); // Clearing text box after click the submit button
     removeMovie(e)
 
     e.preventDefault(); // this method prevent reload the web page.
+}
+
+function removeFilm(e){
+
+    if(e.target.id = "delete-film"){
+        instanceUI.removeFilms(e.target)
+    }
+
 }
 
 

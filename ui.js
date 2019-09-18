@@ -53,6 +53,10 @@ UI.prototype.displayMessages= function(message,type){
 
 }
 
+UI.prototype.removeFilms = function(element){
+    element.parentElement.parentElement.remove()
+}
+
 
 
 
