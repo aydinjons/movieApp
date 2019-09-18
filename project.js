@@ -6,6 +6,7 @@ const  directorElement = document.querySelector("#director");
 const  urlElement = document.querySelector("#url");
 const filmsBody = document.querySelectorAll(".card-body")[1]
 const deleteButton = document.getElementById("delete-film")
+const deleteAllButton = document.getElementById("clear-films")
 
 
 
@@ -19,6 +20,7 @@ eventListener()
 function eventListener(){
     form.addEventListener("submit", addFilm);
     filmsBody.addEventListener("click", removeFilm)
+    deleteAllButton.addEventListener("click", removeAllFilms)
 }
 
 function addFilm(e){
@@ -39,7 +41,7 @@ function addFilm(e){
     
 
     instanceUI.clearInputs(titleElement,directorElement,urlElement); // Clearing text box after click the submit button
-    removeMovie(e)
+
 
     e.preventDefault(); // this method prevent reload the web page.
 }
@@ -52,6 +54,12 @@ function removeFilm(e){
         return void 0;
     }
 
+}
+
+function removeAllFilms(e){
+    
+        instanceUI.removeAllFilms()
+    
 }
 
 

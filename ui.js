@@ -58,6 +58,11 @@ UI.prototype.removeFilms = function(element){
     element.parentElement.parentElement.remove()
 }
 
+UI.prototype.removeAllFilms = function(){
+    const filmList = document.getElementById("films")
+    filmList.innerHTML = ""
+}
+
 
 
 
