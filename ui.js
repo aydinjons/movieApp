@@ -15,7 +15,7 @@ Aydin.myModule = (function (){
 
     
 
-//Denemeeee
+
 function UI() {
         
 }

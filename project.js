@@ -1,5 +1,5 @@
 
-
+//Selecting neccassery elements from dom
 const form = document.getElementById("film-form");
 const  titleElement = document.querySelector("#title");
 const  directorElement = document.querySelector("#director");
@@ -7,11 +7,11 @@ const  urlElement = document.querySelector("#url");
 
 
 
-//UI Objesini başlatma
+//initializing UI object
 
 
 
-//Tüm eventleri yükleme
+//loading all events
 
 eventListener()
 function eventListener(){
@@ -27,17 +27,17 @@ function addFilm(e){
     if(title ==="" || director ==="" || url=== ""){
         displayMessages("Tüm alanları doldurun","danger")
     }else{
-        //Yeni Film
+        //New Movie
         const newFilm = new Movie(title,director,url)
-        addFilmToUI(newFilm) // Arayüze film ekleme
+        addFilmToUI(newFilm) // Adding movie to ui
     }
 
     
 
-    clearInputs(titleElement,directorElement,urlElement);
+    clearInputs(titleElement,directorElement,urlElement); // Clearing text box after click the submit button
     removeMovie(e)
 
-    e.preventDefault();
+    e.preventDefault(); // this method prevent reload the web page.
 }
 
 const apo = Aydin.myModule.init();
